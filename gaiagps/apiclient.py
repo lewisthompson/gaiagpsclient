@@ -164,7 +164,7 @@ class GaiaClient(object):
         :returns: A list of objects
         :rtype: `list`
         """
-        assert objtype in ('folder', 'track', 'waypoint', 'photo')
+        assert objtype in ('folder', 'track', 'waypoint', 'photo', 'route')
 
         r = self.s.get(gurl('api', 'objects', objtype),
                        params={
@@ -301,7 +301,7 @@ class GaiaClient(object):
         :rtype: `dict`
         """
 
-        assert objtype in ('waypoint', 'track', 'folder', 'photo')
+        assert objtype in ('waypoint', 'track', 'folder', 'photo', 'route')
 
         folders = self.list_objects('folder')
         folder = find(folders, 'id', folderid)
@@ -332,7 +332,7 @@ class GaiaClient(object):
         :rtype: `dict`
         """
 
-        assert objtype in ('waypoint', 'track', 'folder', 'photo')
+        assert objtype in ('waypoint', 'track', 'folder', 'photo', 'route')
 
         folders = self.list_objects('folder')
         folder = find(folders, 'id', folderid)
